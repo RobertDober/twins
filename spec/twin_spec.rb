@@ -6,6 +6,12 @@ RSpec.describe Twin do
     as.zip(bs).join 
   end
 
+  context "method exposure" do
+    it "the singleton exposes the same method as the module" do
+      expect(described_class.method(:twin?).source_location).to eq(method(:twin?).source_location)
+    end
+  end
+
   context "strings of unequal length" do
     it "empty and not" do
       expect(twin?("", "a")).to be_falsy

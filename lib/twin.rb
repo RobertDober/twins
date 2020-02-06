@@ -8,7 +8,7 @@ module Twin extend self
 
   def twin? a, b
     return false unless a.size == b.size
-    # The next optimization is asking for troubles ;)
+    # The next optimization is asking for trouble ;)
     # but I also like the spirit to get rid of simple
     # cases first
     return true if a == b
